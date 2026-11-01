@@ -1,0 +1,28 @@
+{
+  "name": "@toxicwind/dedicated-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Universal modular MCP for the whole estate — register ANY pen capability as a callable module. Live at dedicated.mildlyawesome.com",
+  "bin": {
+    "dedicated-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "node --test test/*.test.mjs",
+    "typecheck": "bun check"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "tsx": "^4.19.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.2",
+    "@types/node": "^24.0.0",
+    "@types/bun": "latest"
+  },
+  "module": "index.ts"
+}
