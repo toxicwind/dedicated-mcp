@@ -17,6 +17,7 @@ import { registerTrio } from './geode-trio.js'
 import { registerEstate } from './estate.js'
 import { registerBarn } from './barn.js'
 import { registerForge } from './forge.js'
+import { registerToolkit } from './toolkit.js'
 
 const PENS_ROOT = '/home/toxic/pens'
 const SKIP_PENS: Record<string, boolean> = {
@@ -28,7 +29,7 @@ const SKIP_PENS: Record<string, boolean> = {
   wip: true,
   tmp: true,
 }
-const BESPOKE: Record<string, boolean> = { fathom: true, geode: true, estate: true, barn: true, forge: true }
+const BESPOKE: Record<string, boolean> = { fathom: true, geode: true, estate: true, barn: true, forge: true, toolkit: true }
 
 export function listPens(root = PENS_ROOT): string[] {
   let top: string[] = []
@@ -89,6 +90,7 @@ export function registerPenModules(registry: ModuleRegistry, pensRoot = PENS_ROO
   registerEstate(registry)
   registerBarn(registry)
   registerForge(registry)
+  registerToolkit(registry)
 
   for (const pen of listPens(pensRoot)) {
     if (BESPOKE[pen]) continue
